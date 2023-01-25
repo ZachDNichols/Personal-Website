@@ -186,17 +186,16 @@ main {
     list-style: none;
     padding: 0;
     margin: 0;
+    border: 0;
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .nav-link {
     margin: 10px;
     text-decoration: none;
-    color: black;
-    display: inline-block;
     position: relative;
     color: white;
     user-select: none;
@@ -207,7 +206,7 @@ main {
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 3px;
+    height: 2px;
     bottom: 0;
     left: 0;
     background-color: #ffffff;
@@ -218,12 +217,70 @@ main {
 .nav-link:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
-  }
-
-.nav-link:first-child {
-    margin-left: 20px;
 }
 
 #logo {
     font-weight: 800;
+    display: block;
+}
+
+.bio {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    background-color: #373738;
+    padding: 10px;
+    border-top-right-radius: 3%;
+    border-bottom-right-radius: 3%;
+    border-top-left-radius: 3%;
+    border-bottom-left-radius: 3%;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+#zach-img {
+    width: 16rem;
+    height: 18rem;
+    object-fit: cover;
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+    padding: 1rem;
+}
+
+.biotext {
+    display: flex;
+    flex-direction: column;
+    height: 17rem;
+    padding: 1rem;
+}
+
+#zach-text {
+    display: block;
+}
+
+.socials {
+    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    width: 95%;
+}
+
+.social-icon {
+    display: inline-block;
+    overflow: visible;
+    width: 30px;
+    fill: #949494;
+    padding: 3px;
+    border-radius: 50%;
+    transition: .25s;
+    align-items: center;
+}
+
+#github:hover {
+    fill: #ffffff;
+    background-color: #5f5f5f;
 }
