@@ -258,10 +258,10 @@ main {
     width: 16rem;
     height: 18rem;
     object-fit: cover;
-    border-top-right-radius: 25%;
-    border-bottom-right-radius: 25%;
-    border-top-left-radius: 25%;
-    border-bottom-left-radius: 25%;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
     padding: 1rem;
 }
 
