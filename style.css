@@ -174,7 +174,6 @@ main {
 
 #nav{
     top: 0;
-    display: block;
     position: sticky;
     overflow: hidden;
     width: 100%;
@@ -197,10 +196,6 @@ main {
 .nav-item:first-child {
     margin: auto;
     margin-left: 12px;
-}
-
-.nav-item {
-    display: block;
 }
 
 .nav-item:last-child
@@ -236,7 +231,6 @@ main {
 
 #logo {
     font-weight: 800;
-    display: block;
 }
 
 .bio {
@@ -245,34 +239,45 @@ main {
     overflow: hidden;
     background-color: #373738;
     padding: 10px;
-    border-top-right-radius: 8%;
-    border-bottom-right-radius: 8%;
-    border-top-left-radius: 8%;
-    border-bottom-left-radius: 8%;
-    padding: 0;
-    margin: 0;
-    border: 0;
+    border-radius: 25px;
 }
 
 #zach-img {
     width: 16rem;
     height: 18rem;
     object-fit: cover;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-radius: 25px;
     padding: 1rem;
 }
 
 .biotext {
     display: flex;
     flex-direction: column;
+    padding: 12px;
 }
 
 #zach-text {
-    height: 13rem;
+    text-overflow: ellipsis;
+    padding-right: 5px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 12rem;
+    width: 100%;
+    white-space: normal;
 }
+
+#zach-text::-webkit-scrollbar {
+    width: 3px;
+}
+
+#zach-text::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px #373738;
+  }
+   
+  #zach-text::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
 
 .socials {
     display: flex;
