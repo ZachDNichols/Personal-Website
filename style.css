@@ -191,6 +191,21 @@ main {
     flex-direction: row;
     align-items: center;
     font-weight: 600;
+    justify-content: center;
+}
+
+.nav-item:first-child {
+    margin: auto;
+    margin-left: 12px;
+}
+
+.nav-item {
+    display: block;
+}
+
+.nav-item:last-child
+{
+    padding-right: 12px;
 }
 
 .nav-link {
@@ -230,10 +245,10 @@ main {
     overflow: hidden;
     background-color: #373738;
     padding: 10px;
-    border-top-right-radius: 3%;
-    border-bottom-right-radius: 3%;
-    border-top-left-radius: 3%;
-    border-bottom-left-radius: 3%;
+    border-top-right-radius: 8%;
+    border-bottom-right-radius: 8%;
+    border-top-left-radius: 8%;
+    border-bottom-left-radius: 8%;
     padding: 0;
     margin: 0;
     border: 0;
@@ -253,19 +268,15 @@ main {
 .biotext {
     display: flex;
     flex-direction: column;
-    height: 17rem;
-    padding: 1rem;
 }
 
 #zach-text {
-    display: block;
+    height: 13rem;
 }
 
 .socials {
-    margin-top: auto;
     display: flex;
     flex-direction: row;
-    justify-content: right;
     width: 95%;
 }
 
