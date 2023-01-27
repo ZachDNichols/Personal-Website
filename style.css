@@ -304,21 +304,26 @@ main {
 .socials {
     display: flex;
     flex-direction: row;
-    width: 95%;
+}
+
+.social-icon svg{
+    fill: #d7d7d7;
+    transition: .25s;
+    padding: 3px;
+    margin: -3px;
 }
 
 .social-icon {
-    display: inline-block;
-    overflow: visible;
-    width: 30px;
-    fill: #949494;
+    width: 2rem;
+    height: 2rem;
     padding: 3px;
     border-radius: 50%;
     transition: .25s;
     align-items: center;
 }
 
-#github:hover {
+.social-icon:hover {
     fill: #ffffff;
     background-color: #5f5f5f;
+    transition: .25s;
 }
