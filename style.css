@@ -172,6 +172,11 @@ main {
     padding: 1rem;
 }
 
+a {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
 #nav{
     top: 0;
     position: sticky;
