@@ -1,9 +1,9 @@
 #[macro_use] extern crate rocket;
 
 
-use std::fs::File;
+use rocket::{fs::NamedFile, response::Redirect};
+use std::path::{Path, PathBuf};
 
-use rocket::{response::{Redirect}, fs::FileServer};
 
 #[get("/")]
 fn index() -> Redirect {
@@ -11,7 +11,19 @@ fn index() -> Redirect {
     redirect
 }
 
+#[get("/home")]
+async fn home () -> Option<NamedFile> {
+    NamedFile::open("client/index.html").await.ok()
+}
+
+
+#[get("/<file..>")]
+async fn files(file: PathBuf) -> Option<NamedFile> {
+    NamedFile::open(Path::new("client").join(file)).await.ok()
+}
+
+
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index])
+    rocket::build().mount("/", routes![index, home, files])
 }
