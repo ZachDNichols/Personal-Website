@@ -8,6 +8,22 @@
     <body>        
         <div id="nav"></div>
         <main>
+            <script>
+                function httpGetAsync(theUrl, callback) 
+                {
+                    let xmlHttpReq = new XMLHttpRequest();
+                    xmlHttpReq.onreadystatechange = function () {
+                    if (xmlHttpReq.readyState == 4 && xmlHttpReq.status == 200) callback(xmlHttpReq.responseText);
+                    };
+                    xmlHttpReq.open("GET", theUrl, true); // true for asynchronous
+                    xmlHttpReq.send(null);
+                }
+
+                httpGetAsync("/github", function (result) 
+                {
+                    document.getElementById("").innerText = JSON.parse(result).title;
+                });
+            </script>
         </main>
         <script src="main.js"></script>
     </body>
