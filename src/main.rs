@@ -4,24 +4,6 @@
 use reqwest::header::{USER_AGENT, HeaderMap};
 use rocket::{fs::NamedFile, response::{Redirect}};
 use std::path::{Path, PathBuf};
-use serde::{Deserialize, Serialize};
-
-#[derive(Serialize, Deserialize, Debug)]
-struct APIResponse {
-    items: Items<Repository>,
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-struct Items<T> {
-    items: Vec<T>,
-}
-
-#[derive(Serialize, Deserialize, Debug)]
-struct Repository {
-    title: String,
-}
-
-
 
 #[get("/")]
 fn index() -> Redirect {
@@ -51,17 +33,6 @@ async fn projects() -> Option<NamedFile> {
 
 #[get("/github")]
 async fn github() -> String {
-    let result = get_repos().await;
-
-    println!("{:?}", result);
-
-    let response = result.unwrap();
-
-    response
-}
-
-async fn get_repos() -> Result<String, reqwest::Error>
-{
     let mut header = HeaderMap::new();
 
     header.insert(USER_AGENT, reqwest::header::HeaderValue::from_static("User"));
@@ -72,11 +43,12 @@ async fn get_repos() -> Result<String, reqwest::Error>
         .get("https://api.github.com/users/ZachDNichols/repos")
         .headers(header)
         .send()
-        .await?
+        .await
+        .unwrap()
         .text()
-        .await?;
+        .await;
 
-    Ok(response)
+    response.unwrap()
 }
 
 #[launch]
