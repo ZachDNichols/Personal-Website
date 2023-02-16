@@ -8,6 +8,7 @@
     <body>        
         <div id="nav"></div>
         <main>
+            <div id="test"></div>
             <script>
                 function httpGetAsync(theUrl, callback) 
                 {
@@ -21,7 +22,7 @@
 
                 httpGetAsync("/github", function (result) 
                 {
-                    document.getElementById("").innerText = JSON.parse(result).title;
+                    document.getElementById("test").innerText = result
                 });
             </script>
         </main>

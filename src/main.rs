@@ -1,8 +1,8 @@
 #[macro_use] extern crate rocket;
 
 
-use reqwest::header::{AUTHORIZATION, USER_AGENT, HeaderMap};
-use rocket::{fs::NamedFile, response::Redirect};
+use reqwest::header::{USER_AGENT, HeaderMap};
+use rocket::{fs::NamedFile, response::{Redirect}};
 use std::path::{Path, PathBuf};
 use serde::{Deserialize, Serialize};
 
@@ -50,41 +50,34 @@ async fn projects() -> Option<NamedFile> {
 }
 
 #[get("/github")]
-async fn github() {
-    let client = reqwest::Client::new();
+async fn github() -> String {
+    let result = get_repos().await;
+
+    println!("{:?}", result);
+
+    let response = result.unwrap();
+
+    response
+}
+
+async fn get_repos() -> Result<String, reqwest::Error>
+{
     let mut header = HeaderMap::new();
 
-    header.insert(AUTHORIZATION, "Bearer ".parse().unwrap());
-    header.insert(USER_AGENT, reqwest::header::HeaderValue::from_static("reqwest"));
+    header.insert(USER_AGENT, reqwest::header::HeaderValue::from_static("User"));
     header.insert(reqwest::header::CONTENT_TYPE, "application/json".parse().unwrap());
     header.insert(reqwest::header::ACCEPT, "application/vnd.github+json".parse().unwrap());
 
-    let response = client
-        .get("https://api.github.com/user/repos")
-        .query(&[("visibility", "public")])
+    let response = reqwest::Client::new()
+        .get("https://api.github.com/users/ZachDNichols/repos")
         .headers(header)
         .send()
-        .await
-        .unwrap();
+        .await?
+        .text()
+        .await?;
 
-    println!("{:?}", response);
-
-    /*
-     match response.status() {
-        reqwest::StatusCode::OK => {
-            match response.json::<APIResponse>().await {
-                Ok(parsed) => println!("Success! {:?}", parsed),
-                Err(error) => println!("Error: {:?}", error)
-            };
-        }
-        reqwest::StatusCode::UNAUTHORIZED => {
-            println!("Need new token!");
-        }
-        other => {
-            panic!("Something weird happened: {:?}", other);        }
-        };
-        */
-    }
+    Ok(response)
+}
 
 #[launch]
 fn rocket() -> _ {
