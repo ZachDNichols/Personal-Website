@@ -1,6 +1,5 @@
 #[macro_use] extern crate rocket;
 
-
 use reqwest::header::{USER_AGENT, HeaderMap};
 use rocket::{fs::NamedFile, response::{Redirect}};
 use std::path::{Path, PathBuf};
