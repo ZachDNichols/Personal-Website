@@ -3,6 +3,7 @@ Feel free to contribute code optimizations/fixes, but the content of the website
 
 ## Rust Dependencies
 <pre>
+[dependencies]
 reqwest = { version = "0.11.14", features = ["json"] }
 futures = "0.3.26"
 tokio = { version = "1.25.0", features = ["full"] } # for our async runtime
