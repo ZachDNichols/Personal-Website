@@ -12,6 +12,19 @@ RUN cargo chef cook --release --recipe-path recipe.json
 
 FROM rust as builder
 
+ENV USER=web
+ENV UID=1001
+
+RUN adduser \
+    --disabled-password \
+    --gecos "" \
+    --home "/nonexistent" \
+    --shell "/sbin/nologin" \
+    --no-create-home \
+    --uid "${UID}" \
+    "${USER}"
+    
+
 COPY . /server
 
 WORKDIR /server
@@ -23,7 +36,12 @@ RUN cargo build --release
 
 FROM gcr.io/distroless/cc-debian11
 
+COPY --from=builder /etc/passwd /etc/passwd
+COPY --from=builder /etc/group /etc/group
+
 COPY --from=builder /server/target/release/server /server/server
 WORKDIR /server
+
+USER web:web
 
 CMD ["./server"]
