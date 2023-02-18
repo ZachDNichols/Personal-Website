@@ -1,2 +1,2 @@
 [default]
-port = 80
+log_level = "normal"
