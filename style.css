@@ -344,7 +344,6 @@ a {
     align-items: center;
 }
 
-
 .github-header
 {
     display: flex;
@@ -357,6 +356,35 @@ a {
     justify-content: center;
     align-items: center;
     float: right;
-    width: 3rem;
-    margin-left: 1rem;
+    width: 2rem;
+    margin-left: .8rem;
+}
+
+@media screen and (max-width: 800px) 
+{
+    .bio {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .github-header svg {
+        fill: #d7d7d7;
+        justify-content: center;
+        align-items: center;
+        float: right;
+        width: 2rem;
+        margin-left: .5rem;
+    }
+
+    .github-block h2 {
+        font-size: 1.2rem;
+    }
+    
+    .github-block h3 {
+        font-size: 1rem;
+    }
+    
+    .github-block p {
+        font-size: .9rem;
+    }
 }
