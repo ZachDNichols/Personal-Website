@@ -360,6 +360,48 @@ a {
     margin-left: .8rem;
 }
 
+#mail-icon
+{
+    width: 2.5rem;
+    padding-inline: 10px;
+}
+
+#discord-icon {
+    width: 2.5rem;
+    padding-inline: 10px;
+    fill: #5865f2
+}
+
+.contacts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.server {
+    padding: 10px;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.server img {
+    width: 100%;
+    margin-top: 10px;
+    box-shadow: 0px 0px 20px;
+    transition: .25s;
+}
+
+.server img:hover {
+    box-shadow: 0px 0px 25px;
+    transition: .25s;
+}
+
+.server p{
+   font-weight: normal;
+    margin-top: 2px;
+    font-size: small;
+}
+
 @media screen and (max-width: 800px) 
 {
     #logo
@@ -411,17 +453,17 @@ a {
     }
 
 
-#zach-text {
-    text-overflow: ellipsis;
-    padding-right: 5px;
-    height: 12rem;
-    width: 100%;
-    white-space: normal;
-    overflow: hidden;
-}
+    #zach-text {
+        text-overflow: ellipsis;
+        padding-right: 5px;
+        height: 12rem;
+        width: 100%;
+        white-space: normal;
+        overflow: hidden;
+    }
 
-#zach-text::-webkit-scrollbar {
-    width: 0px;
-}
+    #zach-text::-webkit-scrollbar {
+        width: 0px;
+    }
 
 }
