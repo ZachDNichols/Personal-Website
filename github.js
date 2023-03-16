@@ -74,7 +74,6 @@ for (let i = 0; i < names.length; i++)
             html += watchers[i]["watchers"];
         } 
         html += "</p></div>";
-
 }
 
 github.innerHTML = html;

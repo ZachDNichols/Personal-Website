@@ -362,9 +362,31 @@ a {
 
 @media screen and (max-width: 800px) 
 {
+    #logo
+    {
+        font-size: large;
+    }
+
     .bio {
         flex-direction: column;
         align-items: center;
+    }
+
+    #github
+    {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .github-block 
+    {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        border-radius: 25px;
+        background-color: #373738;
+        margin-left: -3vw;
+        width: 95%;
+        align-self: center;
     }
 
     .github-header svg {
@@ -381,10 +403,25 @@ a {
     }
     
     .github-block h3 {
-        font-size: 1rem;
+        font-size: .9rem;
     }
     
     .github-block p {
         font-size: .9rem;
     }
+
+
+#zach-text {
+    text-overflow: ellipsis;
+    padding-right: 5px;
+    height: 12rem;
+    width: 100%;
+    white-space: normal;
+    overflow: hidden;
+}
+
+#zach-text::-webkit-scrollbar {
+    width: 0px;
+}
+
 }
