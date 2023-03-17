@@ -177,6 +177,12 @@ a {
     color: #ffffff;
 }
 
+footer {
+    text-align: center;
+    font-size: small;
+    margin: 100px 20px 20px;
+}
+
 #nav{
     top: 0;
     position: sticky;
@@ -199,8 +205,7 @@ a {
 }
 
 .nav-item:first-child {
-    margin: auto;
-    margin-left: 12px;
+    margin: auto auto auto 12px;
 }
 
 .nav-item:last-child
