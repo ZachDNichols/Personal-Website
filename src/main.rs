@@ -26,7 +26,7 @@ async fn projects() -> Option<NamedFile> {
 }
 
 #[get("/BidensBadDay")]
-async fn BidensBadDay() -> Option<NamedFile> {
+async fn bidens_bad_day() -> Option<NamedFile> {
     NamedFile::open("BidensBadDay.html").await.ok()
 }
 
@@ -52,6 +52,6 @@ async fn github() -> String {
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index, home, contact, projects, github, BidensBadDay])
+    rocket::build().mount("/", routes![index, home, contact, projects, github, bidens_bad_day])
         .mount("/", FileServer::from(relative!("")))
 }
