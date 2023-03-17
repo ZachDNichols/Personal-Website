@@ -1,7 +1,9 @@
-# Currently a work in progress
-Feel free to contribute code optimizations/fixes, but the content of the website should stay the same.
+# Check out the current website <a href = "https://zachdnichols.com/home">here</a>!
 
-## Rust Dependencies
+# <u>*Always*</u> a work in progress...
+Feel free to suggest code optimizations, fixes, or word changes, but the content of the website should stay the same.
+
+## Rust Dependencies for Backend
 <pre>
 [dependencies]
 reqwest = { version = "0.11.14", features = ["json"] }
