@@ -385,7 +385,7 @@ a {
 }
 
 .server img {
-    width: 100%;
+    width: 30vw;
     margin-top: 10px;
     box-shadow: 0px 0px 20px;
     transition: .25s;
@@ -464,6 +464,13 @@ a {
 
     #zach-text::-webkit-scrollbar {
         width: 0px;
+    }
+
+    .server img {
+        margin-top: 10px;
+        box-shadow: 0px 0px 20px;
+        transition: .25s;
+        width: 100%;
     }
 
 }
