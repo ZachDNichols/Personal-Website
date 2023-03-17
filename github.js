@@ -10,6 +10,24 @@ function makeArray(value) {
         return {[value]: a[value]};
     });
 }
+function sortByDate (a, b) {
+    return new Date(b.date_updated) - new Date(a.date_updated);
+}
+
+function formatDate(dateArray)
+{
+    let dateString = "";
+    for (let i = 0; i < dateArray.length; i++)
+    {
+        dateString = JSON.stringify(dateArray[i])
+        dateString = dateString.split('T')[0];
+        dateString = dateString.split("\"").pop();
+
+        dateArray[i] = dateString;
+    }
+
+    return dateArray;
+}
 
 let response = JSON.parse(httpGet("/github"));
 var github = document.getElementById('github');
@@ -22,6 +40,29 @@ let html_urls = makeArray("html_url");
 let stargazers_counts = makeArray("stargazers_count");
 let watchers = makeArray("watchers");
 let languages = makeArray("language");
+let dateUpdated = makeArray("updated_at");
+
+dateUpdated = formatDate(dateUpdated);
+
+let JSONArray = [];
+
+for (let i = 0; i < names.length; i++)
+{
+    JSONArray.push
+    (
+        {name : names[i],
+        description : descriptions[i],
+        full_names : full_names[i],
+        html_urls : html_urls[i],
+        stargazers_counts : stargazers_counts[i],
+        watchers : watchers[i],
+        languages : languages[i],
+        date_updated : dateUpdated[i]
+        }
+    );
+}
+
+JSONArray.sort(sortByDate);
 
 for (let i = 0; i < names.length; i++)
 {

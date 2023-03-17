@@ -452,20 +452,6 @@ a {
         font-size: .9rem;
     }
 
-
-    #zach-text {
-        text-overflow: ellipsis;
-        padding-right: 5px;
-        height: 12rem;
-        width: 100%;
-        white-space: normal;
-        overflow: hidden;
-    }
-
-    #zach-text::-webkit-scrollbar {
-        width: 0px;
-    }
-
     .server img {
         margin-top: 10px;
         box-shadow: 0px 0px 20px;
