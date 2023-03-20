@@ -30,6 +30,12 @@ async fn bidens_bad_day() -> Option<NamedFile> {
     NamedFile::open("BidensBadDay.html").await.ok()
 }
 
+#[get("/bidensbadday")]
+async fn bbb_redirect() -> Redirect {
+    let redirect = Redirect::to(uri!("/BidensBadDay"));
+    redirect
+}
+
 #[get("/github")]
 async fn github() -> String {
     let mut header = HeaderMap::new();
@@ -52,6 +58,6 @@ async fn github() -> String {
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index, home, contact, projects, github, bidens_bad_day])
+    rocket::build().mount("/", routes![index, home, contact, projects, github, bidens_bad_day, bbb_redirect])
         .mount("/", FileServer::from(relative!("")))
 }
