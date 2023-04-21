@@ -15,11 +15,6 @@ async fn home () -> Option<NamedFile> {
     NamedFile::open("index.html").await.ok()
 }
 
-#[get("/contact")]
-async fn contact () -> Option<NamedFile> {
-    NamedFile::open("contact.html").await.ok()
-}
-
 #[get("/projects")]
 async fn projects() -> Option<NamedFile> {
     NamedFile::open("projects.html").await.ok()
@@ -58,6 +53,6 @@ async fn github() -> String {
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build().mount("/", routes![index, home, contact, projects, github, bidens_bad_day, bbb_redirect])
+    rocket::build().mount("/", routes![index, home, projects, github, bidens_bad_day, bbb_redirect])
         .mount("/", FileServer::from(relative!("")))
 }
