@@ -16,4 +16,4 @@ Cargo.lock
 *.pdb
 
 #Node.js Stuff
-server/node_modules
+/node_modules/
