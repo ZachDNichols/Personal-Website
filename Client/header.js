@@ -1,4 +1,4 @@
-function main()
+function header()
 {
     displayNav();
 }
@@ -10,8 +10,8 @@ function displayNav()
     <header> \
         <nav> \
             <ul class = "navlist"> \
-            <li class = "nav-item"><h1 id = "logo"><a class="nav-link" href="/home">&lt;ZACH&nbsp;NICHOLS&gt;</a></h1></li> \
-            <li class="nav-item"><a href="/projects" class="nav-link">Projects</a></li> \
+            <li class = "nav-item"><h1 id = "logo"><a class="nav-link" href="index.html">&lt;ZACH&nbsp;NICHOLS&gt;</a></h1></li> \
+            <li class="nav-item"><a href="projects.html" class="nav-link">Projects</a></li> \
             </ul> \
         </nav> \
     </header> \
@@ -19,5 +19,5 @@ function displayNav()
     nav.innerHTML = html.trim();
 }
 
-main();
+header();
 

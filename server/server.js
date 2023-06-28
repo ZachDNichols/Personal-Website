@@ -11,3 +11,9 @@ var server = app.listen(8000, function () {
     console.log('Express app listening at http://localhost:8000/')
 
 })
+
+const githubRoute = require('./githubprojects');
+
+app.use('/github', githubRoute);
+
+module.exports = app;
