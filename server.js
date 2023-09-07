@@ -19,10 +19,12 @@ const githubRoute = require('./routes/githubprojects');
 const homeRoute = require('./routes/home');
 const projectsRoute = require('./routes/projects');
 const bidenRoute = require('./routes/bbb');
+const discordRoute = require('./routes/discordverify');
 
 app.use('/github', githubRoute);
 app.use('/home', homeRoute);
 app.use('/projects', projectsRoute);
 app.use('/bidensbadday', bidenRoute);
+app.use('/.well-known/discord', discordRoute);
 
 module.exports = app;
