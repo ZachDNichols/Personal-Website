@@ -9,6 +9,13 @@ var server = app.listen(process.env.PORT || 8000, function () {
     console.log(`Express app listening at http://localhost:${port}/"`)
 })
 
+app.use(function(req, res, next) {
+    if (req.get('x-forwarded-proto') !== 'https') {
+        return res.redirect(['https://', req.get('Host'), req.url].join(''));
+    }
+    next();
+});
+
 app.get('/', (req, res) => {
     res.redirect('/home');
 });
