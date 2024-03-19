@@ -12,6 +12,7 @@
 # below:
 .git
 .gitignore
+.pem
 
 # Node.js dependencies:
 node_modules/
