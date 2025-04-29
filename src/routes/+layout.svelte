@@ -1,11 +1,9 @@
 <script lang="ts">
 	import '../app.css';
-	
+	import Navbar from '../components/nav/navbar.svelte'
 	let { children } = $props();
 </script>
 
-<nav>
-	<a href="/">Home</a>
-</nav>
+<Navbar />
 
 {@render children()}
