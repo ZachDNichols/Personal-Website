@@ -21,3 +21,13 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Visual Studio Code
+.vscode/*
+!.vscode/launch.json
+!.vscode/settings.json
+
+# JetBrains
+.idea/*
+!.idea/runConfigurations/
+!.idea/codeStyles/
