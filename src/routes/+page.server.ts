@@ -35,7 +35,7 @@ async function GetVideos () {
 
         if (!match) {
             videosFound++;
-            videoUrls.push({ url : `https://www.youtube.com/watch?v=${video.id}`, title : video.title});
+            videoUrls.push({ url : `https://www.youtube.com/embed/${video.id}`, title : video.title});
         }
 
         if (videosFound === 3) {
