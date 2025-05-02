@@ -5,8 +5,8 @@
 </script>
 
 <Navbar />
-<div class="fixed min-h-screen min-w-screen -z-50 bg-gray-700"></div>
+<div class="fixed min-h-screen min-w-screen -z-50 bg-white"></div>
 
-<main class="flex flex-col items-center justify-center">
+<main class="flex flex-col items-center justify-center pt-10">
     {@render children()}
 </main>

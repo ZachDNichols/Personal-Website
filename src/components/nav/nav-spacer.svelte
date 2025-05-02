@@ -1,1 +1,1 @@
-<span class="text-white font-bold">|</span>
+<span class="font-bold text-white text-2xl select-none">|</span>
