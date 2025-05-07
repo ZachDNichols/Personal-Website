@@ -1,8 +1,9 @@
 import { YOUTUBE_API_KEY } from "$env/static/private";
 
 export interface YoutubeVideo {
-    url: string;
+    embedUrl: string;
     title: string;
+    videoUrl: string;
 }
 
 export async function getYoutubeVideos () {
@@ -21,7 +22,7 @@ export async function getYoutubeVideos () {
 
         if (!match) {
             videosFound++;
-            videoUrls.push({url: `https://www.youtube.com/embed/${video.id}`, title: video.title});
+            videoUrls.push({embedUrl: `https://www.youtube.com/embed/${video.id}`, title: video.title, videoUrl: `https://www.youtube.com/watch?v=${video.id}`});
         }
 
         if (videosFound === videosToFind) {
