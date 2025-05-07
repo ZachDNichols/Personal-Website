@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { YoutubeVideo } from "$lib/scripts/youtubeVideos";
     import SocialIcon from "../components/social-icon.svelte";
+    import CodingProject from "../components/coding-project.svelte";
 
     let { data } = $props<{ videos: YoutubeVideo[] }>();
 </script>
@@ -48,15 +49,15 @@
 </div>
 <div class="grid grid-cols-3 w-full">
     {#if data && data.videos.length > 0}
-        {#each data.videos as video (video.url)}
+        {#each data.videos as video (video.embedUrl)}
             <div class="w-full overflow-hidden gap-6 p-6">
                 <div class="flex flex-row items-center justify-center h-18">
-                    <h2 class="text-xl font-bold text-center">{video.title}</h2>
+                    <a href="{video.videoUrl}" class="text-xl font-bold text-center border-8 transition-all ease-in-out duration-150 bg-transparent border-transparent hover:bg-primary hover:shadow-lg hover:scale-105 hover:text-white relative rounded-lg after:absolute after:bottom-0 after:left-0 after:h-[.15rem] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-white after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100 after:rounded-xs">{video.title}</a>
                 </div>
                 <div class="relative pt-[56.25%] shadow-lg">
                     <iframe 
                             class="absolute top-0 left-0 w-full h-full" 
-                            src={video.url} 
+                            src={video.embedUrl} 
                             title={video.title}
                             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                             referrerpolicy="strict-origin-when-cross-origin" 
@@ -66,10 +67,33 @@
             </div>
         {/each}
     {:else}
-        <p class="text-red-500">No videos found.</p>
+        <p class="text-red-500 flex flex-row items-center justify-center">No videos found.</p>
     {/if}
 </div>
 
 <div class="flex flex-row items-center justify-center w-full"> 
     <a class="mb-4 text-2xl font-bold text-white bg-primary rounded-xl p-2 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:translate-y-[-1.5]" target="_blank" href="https://www.youtube.com/@zachdnichols">See more on YouTube</a>
+</div>
+
+<div class="flex flex-col items-center justify-center w-full mb-0">
+    <h2 class="text-6xl font-bold m-4">Coding Projects</h2> 
+    <p>I do a little coding... Here are my favorites!</p>
+</div>
+<div class="flex flex-col w-full mb-20 items-center justify-center">
+    <CodingProject 
+        title="Personal Website"
+        description="This website! Built with SvelteKit, TailwindCSS, and TypeScript."
+        image = "/projectPhotos/sitePhoto.jpg"
+        url="https://github.com/ZachDNichols/Personal-Website"
+        caption="Woah, that's a bit meta. Seeing a photo of the website you're on right now? Crazy!"
+    />
+    <CodingProject
+            title="LiDAR"
+            description="A short demo for a video game developed in Unreal Engine 5. The player wields a LiDAR gun and creates a point cloud of their environment. Currently this is not in development, but I may come back to this at some point."
+            image = "/projectPhotos/LiDAR.png"
+            url="https://github.com/ZachDNichols/LiDAR"
+            caption="Image of the editor window for LiDAR. The player can shoot a LiDAR gun."
+    />
+    
+    <a href="https://github.com/ZachDNichols?tab=repositories" class="text-2xl text-white bg-primary rounded-xl p-2 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl font-bold hover:translate-y-[-1.5] m-4">View all my coding projects!</a>
 </div>
