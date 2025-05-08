@@ -8,9 +8,9 @@
 
 <Navbar />
 
-<div class="fixed min-h-screen min-w-screen -z-50 bg-white"></div>
+<div class="fixed min-h-screen min-w-screen w-screen h-screen -z-100 bg-white dark:bg-gray-900"></div>
 
-<main class="flex flex-col items-center justify-center pt-10">
+<main class="flex flex-col items-center justify-center pt-20">
     {@render children()}
 </main>
 
