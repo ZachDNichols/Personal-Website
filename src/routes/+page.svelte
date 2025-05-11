@@ -9,13 +9,13 @@
 <div class="flex flex-col items-center dark:text-white">
     <img alt="Zach Nichols, the creator, owner, and maintainer of this website" src="/images/TransparentHeadshotCropped.webp" class="max-w-1/2 w-150 bg-primary rounded-2xl border-primary border-t-30 shadow-2xl"/>
     <div class="flex flex-col items-start justify-center w-3/4 mt-10">
-        <h1 class="font-bold w-full text-5xl ">Zach Nichols</h1>
-        <h3 class="text-2xl font-bold mt-4">About</h3>
+        <h1 class="font-bold w-full text-5xl ">ZACH NICHOLS</h1>
+        <h3 class="text-4xl font-bold mt-4">ABOUT</h3>
         <p class="mt-1 mb-4">Zach Nichols is a programmer, theater enthusiast, and creative in general. 
             While his dayjob is programming, in his freetime, he likes to act in local plays, enjoy the outdoors, or partake in other creative 
             endeavors such as YouTube or photography. Feel free to poke around this website for more info, or follow him on social media below!</p>
         <div class="flex flex-col items-start justify-center w-full mb-4">
-            <h1 class="font-bold w-full text-4xl mt-2 mb-2">Socials</h1>
+            <h2 class="font-bold w-full text-4xl mt-2 mb-2">SOCIALS</h2>
             <p>Feel free to follow me on social media!</p>
         </div>
         <div class="grid grid-cols-5 items-center justify-center align-middle gap-2">
@@ -36,7 +36,7 @@
             <p class="font-bold ml-1 text-lg">mrfishward</p>
         </div>
         <div class="flex flex-col items-start justify-center w-full mt-4">
-            <h1 class="font-bold w-full text-4xl mt-2 mb-2">Contact</h1>
+            <h2 class="font-bold w-full text-4xl mt-2 mb-2">CONTACT</h2>
             <p class="mb-2">Where to reach out!</p>
             <SocialIcon label="Email" viewBoxWidth="1920" viewBoxHeight="1920" route="mailto:zachdnichols@gmail.com" icon="M1920 428.266v1189.54l-464.16-580.146-88.203 70.585 468.679 585.904H83.684l468.679-585.904-88.202-70.585L0 1617.805V428.265l959.944 832.441L1920 428.266ZM1919.932 226v52.627l-959.943 832.44L.045 278.628V226h1919.887Z"/>
         </div>
@@ -44,15 +44,15 @@
 </div>
 
 <div class="flex flex-col items-center justify-center w-11/12 mb-0 dark:text-white">
-    <h2 class="text-6xl font-bold mt-4">Videos</h2>
+    <h2 class="text-6xl font-bold mt-4">VIDEOS</h2>
     <p class="text-center">Sometimes I do this YouTube thing. Here are my latest uploads!</p>
 </div>
 <div class="flex flex-col w-full dark:text-white justify-evenly">
     {#if data && data.videos.length > 0}
         {#each data.videos as video (video.embedUrl)}
             <div class="w-full overflow-hidden gap-6 p-6">
-                <div class="flex flex-row items-center justify-start w-full mb-2">
-                    <a href={video.videoUrl} class="text-xl font-bold text-center border-6 transition-all ease-in-out duration-150 bg-transparent border-transparent hover:bg-primary hover:shadow-lg hover:scale-105 hover:text-white relative rounded-lg ">{video.title}</a>
+                <div class="flex flex-row items-center justify-center w-full mb-2">
+                    <a href={video.videoUrl} class="text-xl font-bold text-center border-6 transition-all ease-in-out duration-150 bg-transparent border-transparent hover:bg-primary hover:shadow-lg hover:scale-105 hover:text-white relative rounded-lg">{video.title}</a>
                 </div>
                 <div class="relative pt-[56.25%] shadow-lg">
                     <iframe
@@ -68,16 +68,16 @@
             </div>
         {/each}
     {:else}
-        <p class="text-red-500 flex flex-row items-center justify-center">No videos found.</p>
+        <p class="text-red-500 flex flex-row items-center justify-center uppercase">No videos found.</p>
     {/if}
 </div>
 
 <div class="flex flex-row items-center justify-center w-full dark:text-white"> 
-    <a class="mb-4 text-2xl font-bold text-white bg-primary rounded-xl p-2 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:translate-y-[-1.5]" target="_blank" href="https://www.youtube.com/@zachdnichols">See more on YouTube</a>
+    <a class="mb-4 text-2xl font-bold text-white bg-primary rounded-xl p-2 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:translate-y-[-1.5] uppercase" target="_blank" href="https://www.youtube.com/@zachdnichols">See more on YouTube</a>
 </div>
 
 <div class="flex flex-col items-center justify-center w-full mb-4 dark:text-white">
-    <h2 class="text-6xl font-bold m-4 text-center">Coding Projects</h2> 
+    <h2 class="text-6xl font-bold m-4 text-center uppercase">Coding Projects</h2> 
     <p>I do a little coding... Here are my favorites!</p>
 </div>
 <div class="flex flex-col w-full mb-20 justify-center align-center items-center text-left dark:text-white">
@@ -96,5 +96,5 @@
             caption="Image of the editor window for LiDAR. The player can shoot a LiDAR gun."
     />
     
-    <a href="https://github.com/ZachDNichols?tab=repositories" class="text-2xl text-white bg-primary rounded-xl p-2 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl font-bold hover:translate-y-[-1.5] m-4">See more on Github</a>
+    <a href="https://github.com/ZachDNichols?tab=repositories" class="uppercase text-2xl text-white bg-primary rounded-xl p-2 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl font-bold hover:translate-y-[-1.5] m-4">See more on Github</a>
 </div>

@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
 @import 'tailwindcss';
 
 @theme {
     --color-primary: #4272AF;
+    --font-pixel-primary: 'Jersey 25', sans-serif;
 }
