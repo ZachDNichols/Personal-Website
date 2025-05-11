@@ -1,5 +1,5 @@
 <script>
-    import {handleImageError} from "../scripts/errorHandling.js";
+    import {handleImageError} from "$lib/scripts/errorHandling";
 
     let { title, description, image, url, caption = "" } = $props();
 </script>
