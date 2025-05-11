@@ -1,40 +1,17 @@
-import {type DownloadResponse, Storage} from '@google-cloud/storage';
+import { Storage } from '@google-cloud/storage';
+const storage = new Storage();
 
-interface Response {
-    status: number;
-    body: DownloadResponse | null;
+export async function getFile(bucket: string, file: string) {
+    const contents = await storage.bucket(bucket).file(file).download();
+    
+    return {
+        text: contents.toString()
+    };
 }
 
-export async function findFile(bucket: string, file: string) {
-    const value = await downloadIntoMemory(bucket, file);
-    
-    
-    let response: Response;
-    
-    if (value) {
-        response = {
-            status: 200,
-            body: value
-        };
-    } else {
-        response = {
-            status: 404,
-            body: null
-        };
-    }
-    
-    return response;
-}
 
-async function downloadIntoMemory(bucketName : string, fileName: string) {
+export async function getFilesForDirectory(bucketName: string, path: string) {
+    const [files] = await storage.bucket(bucketName).getFiles({prefix: path});
     
-    const storage = new Storage();
-    
-    const contents = await storage.bucket(bucketName).file(fileName).download();
-
-    console.log(
-        `Contents of gs://${bucketName}/${fileName} are ${contents.toString()}.`
-    );
-    
-    return contents;
+    return files;
 }
