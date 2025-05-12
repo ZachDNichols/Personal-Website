@@ -1,10 +1,10 @@
 <script>
-    import {handleImageError} from "$lib/scripts/errorHandling";
+    import {handleImageError} from "$lib/scripts/errorHandling.js";
 
     let { title, description, image, url, caption = "" } = $props();
 </script>
 
-<div class="flex flex-col items-center justify-items-start mt-5 mr-10 ml-10 w-11/12 hidden-animation">
+<div class="flex flex-col items-center justify-items-start mt-5 mr-10 ml-10 w-11/12 md:w/12 md:mt-10 hidden-animation">
     <h3 class="text-2xl font-bold">{title}</h3>
     <p class="text-center bg-gray-800 rounded-2xl w-full m-2 p-2">{description}</p>
     <img src={image} onerror="{handleImageError}" alt={title} class="justify-center shadow-lg rounded" />
