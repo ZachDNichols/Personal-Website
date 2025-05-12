@@ -1,7 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Jersey+25&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 @import 'tailwindcss';
 
 @theme {
     --color-primary: #4272AF;
-    --font-pixel-primary: 'Jersey 25', sans-serif;
+    --font-primary: 'Lexend', sans-serif;
+}
+
+@layer utilities {
+    .hidden-animation {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease-in-out;
+    }
+    
+    .show-animation {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
