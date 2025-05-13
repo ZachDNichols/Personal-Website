@@ -1,16 +1,24 @@
-FROM node:20-alpine AS builder
+FROM node:lts AS build
+
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 COPY . .
 RUN npm run build
-RUN npm prune --production
 
-FROM node:20-alpine
+FROM node:lts-slim
+
 WORKDIR /app
-COPY --from=builder /app/build build/
-COPY --from=builder /app/node_modules node_modules/
-COPY package.json .
+
+# Copy only the necessary files
+COPY --from=build /app/build build/
+COPY --from=build /app/package.json .
+COPY --from=build /app/package-lock.json .
+
+# Install only production dependencies
+RUN npm ci --omit=dev
+
 EXPOSE 3000
-ENV NODE_ENV=production
-CMD [ "node", "build" ]
+
+# Start the server using the correct entry point
+CMD ["node", "build/index.js"]
