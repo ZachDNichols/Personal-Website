@@ -11,7 +11,7 @@ FROM node:lts-slim
 WORKDIR /app
 
 # Copy only the necessary files
-COPY --from=build /app/build build/
+COPY --from=build /app/build .
 COPY --from=build /app/package.json .
 COPY --from=build /app/package-lock.json .
 
@@ -21,4 +21,4 @@ RUN npm ci --omit=dev
 EXPOSE 3000
 
 # Start the server using the correct entry point
-CMD ["node", "build/index.js"]
+CMD ["node", "."]
