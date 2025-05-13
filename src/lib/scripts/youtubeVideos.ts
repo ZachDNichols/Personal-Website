@@ -1,4 +1,4 @@
-import { YOUTUBE_API_KEY } from "$env/static/private";
+import { env } from "$env/dynamic/private";
 
 export interface YoutubeVideo {
     embedUrl: string;
@@ -14,7 +14,7 @@ export async function getYoutubeVideos () {
     const videosToFind = 3;
 
     for (const video of videosWithoutDuration) {
-        const response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=contentDetails&id=${video.id}&key=${YOUTUBE_API_KEY}`);
+        const response = await fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=contentDetails&id=${video.id}&key=${env.YOUTUBE_API_KEY}`);
 
         const json = await response.json();
         const duration = json.items[0].contentDetails.duration;
@@ -34,7 +34,7 @@ export async function getYoutubeVideos () {
 }
 
 async function getVideosFromApi () {
-    const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUfd1oMzWrciuc0EZZtKoFxA&key=${YOUTUBE_API_KEY}`;
+    const url = `https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUfd1oMzWrciuc0EZZtKoFxA&key=${env.YOUTUBE_API_KEY}`;
 
     const response = await fetch(url);
     const json = await response.json();
