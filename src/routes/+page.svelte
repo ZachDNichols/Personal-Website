@@ -55,8 +55,9 @@
     <h2 class="text-6xl font-bold mt-4">VIDEOS</h2>
     <p class="text-center">Sometimes I do this YouTube thing. Here are my latest uploads!</p>
 </div>
-<div class="flex flex-col w-full dark:text-white justify-center hidden-animation lg:grid lg:grid-cols-3">
-    {#if data && data.videos.length > 0}
+{#if data && data.videos.length > 0}
+<div class="flex flex-col w-full dark:text-white justify-center items-center hidden-animation lg:grid lg:grid-cols-3">
+
         {#each data.videos as video (video.embedUrl)}
             <div class="w-full justify-center items-center text-center overflow-hidden gap-6 p-6 md:p-10 lg:p-4 lg:gap-4">
                 <div class="flex flex-row items-center justify-center w-full mb-2 lg:h-18">
@@ -75,10 +76,10 @@
                 </div>
             </div>
         {/each}
-    {:else}
-        <p class="text-red-500 flex flex-row items-center justify-center uppercase">No videos found.</p>
-    {/if}
 </div>
+{:else}
+    <p class="text-red-500 text-center uppercase">No videos found.</p>
+{/if}
 
 <div class="flex flex-row items-center justify-center w-full dark:text-white hidden-animation"> 
     <a class="mb-4 text-2xl font-bold text-white bg-primary rounded-xl p-2 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:translate-y-[-1.5] uppercase" target="_blank" href="https://www.youtube.com/@zachdnichols">See more on YouTube</a>
