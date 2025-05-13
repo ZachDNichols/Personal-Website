@@ -8,6 +8,9 @@ RUN npm run build
 
 FROM node:lts
 
+ENV PORT=8080
+ENV HOST=0.0.0.0
+
 COPY --from=build /app/build .
 COPY --from=build /app/package.json .
 COPY --from=build /app/package-lock.json .
