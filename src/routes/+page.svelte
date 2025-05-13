@@ -55,11 +55,11 @@
     <h2 class="text-6xl font-bold mt-4">VIDEOS</h2>
     <p class="text-center">Sometimes I do this YouTube thing. Here are my latest uploads!</p>
 </div>
-<div class="flex flex-col w-full dark:text-white justify-evenly hidden-animation lg:grid lg:grid-cols-3 lg:justify-normal">
+<div class="flex flex-col w-full dark:text-white justify-center hidden-animation lg:grid lg:grid-cols-3">
     {#if data && data.videos.length > 0}
         {#each data.videos as video (video.embedUrl)}
-            <div class="w-full overflow-hidden gap-6 p-6 md:p-10 lg:p-4 lg:gap-4">
-                <div class="flex flex-row items-center justify-center w-full mb-2 lg:justify-start lg:h-18">
+            <div class="w-full justify-center items-center text-center overflow-hidden gap-6 p-6 md:p-10 lg:p-4 lg:gap-4">
+                <div class="flex flex-row items-center justify-center w-full mb-2 lg:h-18">
                     <a href={video.videoUrl} class="text-xl font-bold text-center border-6 transition-all ease-in-out duration-150 bg-transparent border-transparent hover:bg-primary hover:shadow-lg hover:scale-105 hover:text-white relative rounded-lg">{video.title}</a>
                 </div>
                 <div class="relative pt-[56.25%] shadow-lg">
