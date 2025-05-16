@@ -93,7 +93,7 @@
     <CodingProject 
         title="Personal Website"
         description="This website! Built with SvelteKit, TailwindCSS, and TypeScript."
-        image = "/projectPhotos/website-homepage.jpg"
+        image = "/images/projectPhotos/website-homepage.jpg"
         url="https://github.com/ZachDNichols/Personal-Website"
         caption="Woah, that's a bit meta. Seeing a photo of the website you're on right now? Crazy!"
         altText="A screenshot of the homepage of this website, showing a photo of Zach Nichols and some text about him."
@@ -101,7 +101,7 @@
     <CodingProject
             title="LiDAR"
             description="A short demo for a video game developed in Unreal Engine 5. The player wields a LiDAR gun and creates a point cloud of their environment. Currently this is not in development, but I may come back to this at some point."
-            image = "/projectPhotos/LiDAR-In-Editor.png"
+            image = "/images/projectPhotos/LiDAR-In-Editor.png"
             url="https://github.com/ZachDNichols/LiDAR"
             caption="Image of the editor window for LiDAR. The player can shoot a LiDAR gun."
             altText="A screenshot of the Unreal Engine 5 editor window, showing the LiDAR gun and part of the level."
