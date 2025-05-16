@@ -2,6 +2,9 @@ FROM node:lts AS build
 
 WORKDIR /app
 COPY package*.json ./
+COPY tsconfig.json ./
+COPY svelte.config.js ./
+COPY vite.config.js ./
 RUN npm install
 COPY . .
 RUN npm run build
@@ -14,6 +17,9 @@ WORKDIR /app
 COPY --from=build /app/build .
 COPY --from=build /app/package.json .
 COPY --from=build /app/package-lock.json .
+COPY --from=build /app/vite.config.js .
+COPY --from=build /app/svelte.config.js .
+COPY --from=build /app/tsconfig.json .
 
 # Install only production dependencies
 RUN npm ci --omit=dev

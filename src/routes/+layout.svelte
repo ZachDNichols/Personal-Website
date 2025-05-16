@@ -2,7 +2,7 @@
 	import '../app.css';
     import Navbar from '$lib/components/nav/navbar.svelte';
     import Footer from '$lib/components/footer.svelte';
-    
+
 	let { children } = $props();
 </script>
 
@@ -14,14 +14,16 @@
     
     <meta name="og:title" content="Zach Nichols | Software Engineer, Thespian, and Video Maker" />
     <meta name="og:description" content="Zach Nichols is a software engineer, thespian, and video maker. This is his personal website." />
-    <meta name="og:image" content="/preview.png"/>
+    <meta name="og:image" content="https://zachdnichols.com/images/preview.png"/>
+    <meta name="og:image:alt" content="Zach Nichols' personal website"/>
     <meta name="og:url" content="https://zachnichols.com"/>
     <meta name="og:type" content="website" />
     
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Zach Nichols | Software Engineer, Thespian, and Video Maker" />
     <meta name="twitter:description" content="Zach Nichols is a software engineer, thespian, and video maker. This is his personal website." />
-    <meta name="twitter:image" content="/preview.png"/>
+    <meta name="twitter:image" content="https://zachdnichols.com/images/preview.png"/>
+    <meta name="twitter:image:alt" content="Zach Nichols' personal website"/>
     <meta name="twitter:url" content="https://zachnichols.com" />
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
