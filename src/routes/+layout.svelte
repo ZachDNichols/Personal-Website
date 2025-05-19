@@ -2,8 +2,21 @@
 	import '../app.css';
     import Navbar from '$lib/components/nav/navbar.svelte';
     import Footer from '$lib/components/footer.svelte';
+    import { onMount } from 'svelte';
+    import { env } from '$env/dynamic/public';
 
 	let { children } = $props();
+
+    onMount(() => {
+        if (env.PUBLIC_ENVIRONMNET === 'beta' && document.querySelector('main') !== null) {
+            document.querySelector('main')?.classList.add('pt-30');
+            document.querySelector('main')?.classList.add('lg:pt-10');
+        }
+        else if (document.querySelector('main') !== null){
+            document.querySelector('main')?.classList.add('pt-20');
+            document.querySelector('main')?.classList.add('lg:pt-8');
+        }
+    });
 </script>
 
 <svelte:head>
@@ -33,7 +46,7 @@
 
 <div class="fixed min-h-screen min-w-screen w-screen h-screen -z-100 bg-white dark:bg-gray-900"></div>
 
-<main class="flex flex-col items-center justify-center pt-8 font-pixel-primary">
+<main class="flex flex-col items-center justify-center font-pixel-primary lg:pt-8">
     {@render children()}
 </main>
 
