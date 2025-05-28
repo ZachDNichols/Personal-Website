@@ -34,8 +34,6 @@
     <meta name="twitter:image" content="https://zachdnichols.com/images/preview.png"/>
     <meta name="twitter:image:alt" content="Zach Nichols' personal website"/>
     <meta name="twitter:url" content="https://zachnichols.com" />
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </svelte:head>
 
 <Navbar />
