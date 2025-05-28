@@ -1,6 +1,13 @@
 <script>
     import { page }  from '$app/state'
     import {env} from "$env/dynamic/public";
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+        if (env.PUBLIC_ENVIRONMNET === 'beta' && document.querySelector('nav') !== null) {
+            document.querySelector('nav')?.classList.add('top-8');
+        }
+    });
 </script>
 
 {#if page.status === 200}

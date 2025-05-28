@@ -9,8 +9,7 @@
 
     onMount(() => {
         if (env.PUBLIC_ENVIRONMNET === 'beta' && document.querySelector('main') !== null) {
-            document.querySelector('main')?.classList.add('pt-30');
-            document.querySelector('main')?.classList.add('lg:pt-10');
+            document.querySelector('main')?.classList.add('pt-10');
         }
     });
 </script>
