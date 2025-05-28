@@ -12,10 +12,6 @@
             document.querySelector('main')?.classList.add('pt-30');
             document.querySelector('main')?.classList.add('lg:pt-10');
         }
-        else if (document.querySelector('main') !== null){
-            document.querySelector('main')?.classList.add('pt-20');
-            document.querySelector('main')?.classList.add('lg:pt-8');
-        }
     });
 </script>
 
@@ -24,6 +20,7 @@
     <meta name="description" content="Zach Nichols is a software engineer, thespian, and video maker. This is his personal website." />
     <meta name="keywords" content="Zach Nichols, Zach D. Nichols, Zachary Nichols, Zachary D. Nichols, Zachary Dean Nichols, Zachary Dean D. Nichols, Zachary Dean D. Nichols, Zachary Dean D. Nicholls, Zachary Dean D. Nicholls, Zachary Dean D. Nicholles, Zachary Dean D. Nicholles, Zachary Dean D. Nicholles, Zachary Dean D. Nicholles" />
     <meta name="author" content="Zach Nichols" />
+    <meta name="title" content="Zach Nichols | Software Engineer, Thespian, and Video Maker" />
     
     <meta name="og:title" content="Zach Nichols | Software Engineer, Thespian, and Video Maker" />
     <meta name="og:description" content="Zach Nichols is a software engineer, thespian, and video maker. This is his personal website." />
@@ -44,7 +41,7 @@
 
 <Navbar />
 
-<main class="flex flex-col items-center justify-center font-pixel-primary lg:pt-8">
+<main class="flex flex-col items-center justify-center align-middle font-pixel-primary">
     {@render children()}
 </main>
 
