@@ -14,7 +14,7 @@
     });
 </script>
 
-<div class="flex flex-col items-center dark:text-white lg:flex-row lg:m-20 lg:mb-10 lg:items-start lg:justify-center lg:w-11/12 lg:p-20 lg:pt-0 lg:pb-0">
+<div class="flex flex-col items-center dark:text-white mt-5 lg:flex-row lg:m-20 lg:mt-5 lg:mb-10 lg:items-start lg:justify-center lg:w-11/12 lg:p-20 lg:pt-0 lg:pb-0">
     <img loading="lazy" alt="Zach Nichols, the creator, owner, and maintainer of this website" src="/images/Zach-Nichols.webp" class="max-w-1/2 w-150 bg-primary rounded-2xl border-primary border-t-30 shadow-2xl hidden-animation"/>
     <div class="flex flex-col items-center justify-center text-center w-11/12 mt-10 row hidden-animation lg:w-full lg:mt-0 lg:m-10 lg:text-left lg:justify-items-normal lg:items-start lg:pt-10">
         <h1 class="font-bold w-full text-5xl hidden-animation">ZACH NICHOLS</h1>
