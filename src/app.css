@@ -18,3 +18,17 @@
         transform: translateY(0);
     }
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #16161e;
+        color: #16161e;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        background-color: #FFFFFF;
+        color: #ffffff;
+    }
+}

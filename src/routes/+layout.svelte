@@ -44,8 +44,6 @@
 
 <Navbar />
 
-<div class="fixed min-h-screen min-w-screen w-screen h-screen -z-100 bg-white dark:bg-gray-900"></div>
-
 <main class="flex flex-col items-center justify-center font-pixel-primary lg:pt-8">
     {@render children()}
 </main>
