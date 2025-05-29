@@ -29,7 +29,7 @@
     });
 </script>
 
-<div class="flex flex-col items-center dark:text-white lg:flex-row lg:m-20 lg:mt-5 lg:mb-10 lg:items-start lg:justify-center lg:w-full lg:p-20 lg:pt-0 lg:pb-0">
+<div class="flex flex-col items-center dark:text-white lg:flex-row lg:m-20 lg:mt-5 lg:mb-10 lg:items-start lg:justify-center lg:w-11/12 lg:p-20 lg:pt-0 lg:pb-0">
     <img loading="lazy" alt="Zach Nichols, the creator, owner, and maintainer of this website" src="/images/Zach-Nichols.webp" class="max-w-1/2 w-150 bg-primary rounded-2xl border-primary border-t-30 shadow-2xl hidden-animation"/>
     <div class="flex flex-col items-center justify-center text-center w-11/12 mt-10 row hidden-animation lg:w-full lg:mt-0 lg:m-10 lg:text-left lg:justify-items-normal lg:items-start xl:pt-10">
         <h1 class="font-bold w-full text-5xl hidden-animation">ZACH NICHOLS</h1>
@@ -68,11 +68,10 @@
     <p class="text-center">Sometimes I do this YouTube thing. Here are my latest uploads!</p>
 </div>
 {#if data && data.videos.length > 0}
-<div class="flex flex-row w-full dark:text-white justify-center items-center hidden-animation flex-wrap p-5 pt-0 pb-0">
+    <div class="flex flex-col w-11/12 dark:text-white justify-center items-center hidden-animation lg:grid lg:grid-cols-3">
 
         {#each data.videos as video (video.embedUrl)}
-            <div class="w-full lg:w-1/2 justify-center items-center text-center overflow-hidden gap-6 p-6 lg:p-4 lg:gap-4">
-                <div class="flex flex-row items-center justify-center w-full mb-2 lg:h-18">
+            <div class="w-full justify-center items-center text-center overflow-hidden gap-6 p-6 md:p-10 lg:p-4 lg:gap-4">                <div class="flex flex-row items-center justify-center w-full mb-2 lg:h-18">
                     <a href={video.videoUrl} class="text-xl font-bold text-center border-6 transition-all ease-in-out duration-150 bg-transparent border-transparent hover:bg-primary hover:shadow-lg hover:scale-105 hover:text-white relative rounded-lg">{video.title}</a>
                 </div>
                 <div class="relative pt-[56.25%] shadow-lg">
@@ -88,7 +87,7 @@
                 </div>
             </div>
         {/each}
-</div>
+    </div>
 {:else}
     <p class="text-red-500 text-center uppercase">No videos found.</p>
 {/if}
@@ -101,7 +100,7 @@
     <h2 class="text-6xl font-bold m-4 text-center uppercase">Coding Projects</h2> 
     <p>I do a little coding... Here are my favorites!</p>
 </div>
-<div class="flex flex-col w-full justify-center align-center items-center text-left dark:text-white hidden-animation lg:grid lg:grid-cols-2 lg:justify-evenly lg:items-start lg:w-11/12">
+<div class="flex flex-col w-11/12 justify-center align-center items-center text-left dark:text-white hidden-animation lg:grid lg:grid-cols-2 lg:justify-evenly lg:items-start lg:w-11/12">
     <CodingProject 
         title="Personal Website"
         description="This website! Built with SvelteKit, TailwindCSS, and TypeScript."

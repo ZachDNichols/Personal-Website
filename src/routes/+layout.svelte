@@ -11,6 +11,10 @@
         if (env.PUBLIC_ENVIRONMNET === 'beta' && document.querySelector('main') !== null) {
             document.querySelector('main')?.classList.add('pt-10');
         }
+        else
+        {
+            document.querySelector('main')?.classList.add('pt-5');
+        }
     });
 </script>
 
