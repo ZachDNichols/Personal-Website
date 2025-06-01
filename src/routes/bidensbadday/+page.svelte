@@ -3,33 +3,41 @@
     
     let unityContainer: HTMLCanvasElement;
     let unityInstance: UnityInstance;
-
+    let isMobile = $state(false);
+    
     onMount(() => {
-        console.log('Mounting Unity instance...');
-        const script = document.createElement('script');
-        script.src = '/BidensBadDay/Build/BidensBadDay.loader.js';
+        if (window.screen.width < 1024) {
+            isMobile = true;
+            console.warn('Biden\'s Bad Day is not supported on mobile devices.');
+        }
         
-        
-        script.onload = () => {
-            createUnityInstance(unityContainer, {
-                dataUrl: '/BidensBadDay/Build/BidensBadDay.data',
-                frameworkUrl: '/BidensBadDay/Build/BidensBadDay.framework.js',
-                codeUrl: '/BidensBadDay/Build/BidensBadDay.wasm',
-            }).then((createdUnityInstance) => {
-                console.log('Unity loaded:', createdUnityInstance);
-                unityInstance = createdUnityInstance;
-            }).catch((err) => {
-                console.error('Unity load error:', err);
-            });
-        };
-        
-        document.body.appendChild(script);
+        if (!isMobile) {
+            const script = document.createElement('script');
+            script.src = '/BidensBadDay/Build/BidensBadDay.loader.js';
+
+
+            script.onload = () => {
+                createUnityInstance(unityContainer, {
+                    dataUrl: '/BidensBadDay/Build/BidensBadDay.data',
+                    frameworkUrl: '/BidensBadDay/Build/BidensBadDay.framework.js',
+                    codeUrl: '/BidensBadDay/Build/BidensBadDay.wasm',
+                }).then((createdUnityInstance) => {
+                    console.log('Unity loaded:', createdUnityInstance);
+                    unityInstance = createdUnityInstance;
+                }).catch((err) => {
+                    console.error('Unity load error:', err);
+                });
+            };
+
+            document.body.appendChild(script);
+        }
     });
     
     function handleFullscreen() {
-        if (unityInstance) {
+        if (unityInstance && !isMobile) {
             unityInstance.SetFullscreen(1);
         }
+        
     }
 </script>
 
@@ -55,6 +63,29 @@
     }
 </script>
 
+<svelte:head>
+    <title>Biden's Bad Day!</title>
+    <meta name="description" content="Play the Joe Biden-themed platformer today!" />
+    <meta name="keywords" content="Joe Biden, Biden, Biden's Bad Day, Bidens Bad Day, BBB, Mario Parody, Joe Biden Mario Parody, Platformer, Joe Biden Platformer, Joe Biden Game, Video Game" />
+    <meta name="author" content="Zach Nichols" />
+    <meta name="title" content="Biden's Bad Day" />
+
+    <meta name="og:title" content="Biden's Bad Day" />
+    <meta name="og:description" content="Play the Joe Biden-themed platformer today!" />
+    <meta name="og:image" content="https://zachdnichols.com/images/bidens-bad-day-preview.png"/>
+    <meta name="og:image:alt" content="Logo for Biden's Bad Day"/>
+    <meta name="og:url" content="https://zachdnichols.com/bidensbadday"/>
+    <meta name="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Biden's Bad Day" />
+    <meta name="twitter:description" content="Play the Joe Biden-themed platformer today!" />
+    <meta name="twitter:image" content="https://zachdnichols.com/images/bidens-bad-day-preview.png"/>
+    <meta name="twitter:image:alt" content="Logo for Biden's Bad Day"/>
+    <meta name="twitter:url" content="https://zachdnichols.com/bidensbadday" />
+</svelte:head>
+
+{#if !isMobile}
 <div class="flex flex-col items-center justify-center m-20 w-full relative">
     <canvas bind:this={unityContainer} id="unity-canvas" class="bg-black max-h-1/4 w-3/4 -z-10"></canvas>
     <div class="flex flex-row absolute bottom-2 right-[13%] z-10">
@@ -63,3 +94,6 @@
         </button>
     </div>
 </div>
+{:else}
+    <p class="m-10 text-center">Sorry, Biden's Bad Day is currently only playable on PC. If you are on PC, try increasing your browser window, and <a class="underline" href=".">refresh</a> the page.</p>
+{/if}
