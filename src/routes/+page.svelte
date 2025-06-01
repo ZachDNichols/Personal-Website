@@ -29,14 +29,34 @@
     });
 </script>
 
+<svelte:head>
+    <title>Zach Nichols | Software Engineer, Thespian, and Video Maker</title>
+    <meta name="description" content="Zach Nichols is a software engineer, thespian, and video maker. This is his personal website." />
+    <meta name="keywords" content="Zach Nichols, Zach D. Nichols, Zachary Nichols, Zachary D. Nichols, Zachary Dean Nichols, Zachary Dean D. Nichols, Zachary Dean D. Nichols, Zachary Dean D. Nicholls, Zachary Dean D. Nicholls, Zachary Dean D. Nicholles, Zachary Dean D. Nicholles, Zachary Dean D. Nicholles, Zachary Dean D. Nicholles" />
+    <meta name="author" content="Zach Nichols" />
+    <meta name="title" content="Zach Nichols | Software Engineer, Thespian, and Video Maker" />
+
+    <meta name="og:title" content="Zach Nichols | Software Engineer, Thespian, and Video Maker" />
+    <meta name="og:description" content="Zach Nichols is a software engineer, thespian, and video maker. This is his personal website." />
+    <meta name="og:image" content="https://zachdnichols.com/images/preview.png"/>
+    <meta name="og:image:alt" content="Zach Nichols' personal website"/>
+    <meta name="og:url" content="https://zachdnichols.com"/>
+    <meta name="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zach Nichols | Software Engineer, Thespian, and Video Maker" />
+    <meta name="twitter:description" content="Zach Nichols is a software engineer, thespian, and video maker. This is his personal website." />
+    <meta name="twitter:image" content="https://zachdnichols.com/images/preview.png"/>
+    <meta name="twitter:image:alt" content="Zach Nichols' personal website"/>
+    <meta name="twitter:url" content="https://zachdnichols.com" />
+</svelte:head>
+
 <div class="flex flex-col items-center dark:text-white lg:flex-row lg:m-20 lg:mt-5 lg:mb-10 lg:items-start lg:justify-center lg:w-11/12 lg:p-20 lg:pt-0 lg:pb-0">
     <img loading="lazy" alt="Zach Nichols, the creator, owner, and maintainer of this website" src="/images/Zach-Nichols.webp" class="max-w-1/2 w-150 bg-primary rounded-2xl border-primary border-t-30 shadow-2xl hidden-animation"/>
     <div class="flex flex-col items-center justify-center text-center w-11/12 mt-10 row hidden-animation lg:w-full lg:mt-0 lg:m-10 lg:text-left lg:justify-items-normal lg:items-start xl:pt-10">
         <h1 class="font-bold w-full text-5xl hidden-animation">ZACH NICHOLS</h1>
         <h2 class="text-3xl font-bold mt-4 hidden-animation ">ABOUT</h2>
-        <p class="mt-1 mb-4 hidden-animation">Zach Nichols is a programmer, theater enthusiast, and creative in general. 
-            While his day-job is programming, in his free time, he likes to act in local plays, enjoy the outdoors, or partake in other creative 
-            endeavors such as YouTube or photography. Feel free to poke around this website for more info, or follow him on social media below!</p>
+        <p class="mt-1 mb-4 hidden-animation">Zach Nichols is a programmer, theater enthusiast, and all-around creative. While his day job is in programming, he spends his free time acting in local plays, enjoying the outdoors, and pursuing other creative endeavors like YouTube and photography. Feel free to explore the website for more information or follow him on social media below!</p>
         <div class="flex flex-col items-center text-center justify-center w-full mb-4 hidden-animation lg:w-full lg:text-left lg:justify-items-normal lg:items-start">
             <h3 class="font-bold w-full text-3xl mt-2 mb-2 hidden-animation lg:mb-0">SOCIALS</h3>
             <p>Feel free to follow me on social media!</p>
