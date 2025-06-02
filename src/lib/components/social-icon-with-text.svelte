@@ -8,7 +8,7 @@
         <path fill="currentColor" d={icon}/>
         <title>{label}</title>
     </svg>
-    <p class="font-bold ml-1 text-lg">{text}</p>
+    <p class="font-bold ml-1 text-lg select-none">{text}</p>
 </a>
 {:else}
     <div class="flex flex-row items-left justify-start ml-0 border-4 border-primary rounded-xl bg-primary p-2 mt-4 text-white">
